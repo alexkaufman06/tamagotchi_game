@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: tamagotchi_game_development
+
+test:
+  adapter: postgresql
+  database: tamagotchi_game_test

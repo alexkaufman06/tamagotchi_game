@@ -1,0 +1,18 @@
+<form action="/" method="post" class="form-group">
+  <input type="text" name="name" placeholder="name your tamagotchi" class="form-control" required autofocus>
+  <br>
+  <button action="submit" class="btn btn-lg btn-danger">Create Tamagotchi</button>
+</form>
+<br>
+<% if @tamagotchis.any? %>
+<ul>
+  <% @tamagotchis.each do |tamagotchi| %>
+    <li>
+      <a href="/game/<%= tamagotchi.id %>"><%= tamagotchi.name %></a>
+    </li>
+    Food Level = <%= tamagotchi.food_level %>
+  <% end %>
+</ul>
+<% else %>
+  <p>You have no tamagotchis!</p>
+<% end %>
