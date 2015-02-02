@@ -14,10 +14,39 @@ end
 
 get '/game/:id' do
   @tamagotchi = Tamagotchi.find(params['id'].to_i)
-  while @tamagotchi.is_alive?
+  @tamagotchi.time_passes(1)
+  if @tamagotchi.is_alive?
     erb :game
-    @tamagotchi.time_passes(1)
-    sleep 1
+  else
+    @name = @tamagotchi.name
+    @tamagotchi.destroy
+    erb :dead
   end
-  erb :game
+end
+
+post '/feed' do
+  @tamagotchi = Tamagotchi.find(params['id'].to_i)
+  @tamagotchi.feed
+  redirect back
+end
+
+post '/sleep' do
+  @tamagotchi = Tamagotchi.find(params['id'].to_i)
+  new_level = @tamagotchi.sleep_level + 5
+  @tamagotchi.update(:sleep_level => new_level)
+  redirect back
+end
+
+post '/play' do
+  @tamagotchi = Tamagotchi.find(params['id'].to_i)
+  new_level = @tamagotchi.activity_level + 5
+  @tamagotchi.update(:activity_level => new_level)
+  redirect back
+end
+
+
+get '/delete/:id' do
+  to_delete = Tamagotchi.find(params['id'].to_i)
+  to_delete.destroy
+  redirect '/'
 end

@@ -31,4 +31,12 @@ describe Tamagotchi do
       expect(my_pet.is_alive?).to(eq(false))
     end
   end
+
+  describe "#feed" do
+    it "increases the tamagotchi food level" do
+      my_pet = Tamagotchi.create(:name => "Muffin Boots")
+      my_pet.feed
+      expect(my_pet.food_level).to(eq(15))
+    end
+  end
 end

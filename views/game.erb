@@ -1,5 +1,24 @@
 <h1><%= @tamagotchi.name %></h1>
+<meta http-equiv="refresh" content="5">
+
+<img src="/tama1.gif" alt="my pet" />
 
 <h3>Food Level: <%= @tamagotchi.food_level %></h3>
 <h3>Activity Level: <%= @tamagotchi.activity_level %></h3>
 <h3>Sleep Level: <%= @tamagotchi.sleep_level %></h3>
+
+
+<form action="/feed" method="post">
+  <input type="hidden" name="id" value="<%= @tamagotchi.id %>">
+  <button action="submit" class="btn btn-lg btn-success">Feed</button>
+</form>
+<form action="/play" method="post">
+  <input type="hidden" name="id" value="<%= @tamagotchi.id %>">
+  <button action="submit" class="btn btn-lg btn-primary">Play</button>
+</form>
+<form action="/sleep" method="post">
+  <input type="hidden" name="id" value="<%= @tamagotchi.id %>">
+  <button action="submit" class="btn btn-lg btn-danger">Sleep</button>
+</form>
+
+<a href='/'>Back</a>
