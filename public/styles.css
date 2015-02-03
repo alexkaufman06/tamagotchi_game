@@ -8,6 +8,13 @@ body {
   background-color: #FFF;
 }
 
+a {
+  color: #000;
+}
+
+a:hover {
+  color: #000;
+}
 
 em {
   color: red;
@@ -20,7 +27,6 @@ em {
 
 .main-header {
   background-color: #FFFFC2;
-  border-color: #999999;
   box-shadow: 10px 10px 5px #888888;
   border: 2px solid;
   border-radius: 25px;
@@ -28,5 +34,26 @@ em {
   margin-bottom: 15px;
   margin-left: 225px;
   margin-right: 225px;
+  text-align: center;
+}
+
+.main-bottom {
+  background-color: #FFFFC2;
+  box-shadow: 10px 10px 5px #888888;
+  border: 2px solid;
+  border-radius: 25px;
+  padding: 15px;
+}
+
+.game-box {
+  background-color: #FFFFC2;
+  box-shadow: 10px 10px 5px #888888;
+  border: 2px solid;
+  border-radius: 25px;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+.name-and-gif {
   text-align: center;
 }
