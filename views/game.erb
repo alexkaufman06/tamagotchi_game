@@ -1,25 +1,36 @@
 <h1><%= @tamagotchi.name %></h1>
 <meta http-equiv="refresh" content="5">
+<div class="row">
+  <div class="col-sm-6">
 
-<img src="/tama1.gif" alt="my pet" />
+    <img src="/tama1.gif" alt="my pet" />
 
-<h3>Food Level: <%= @tamagotchi.food_level %></h3>
-<h3>Activity Level: <%= @tamagotchi.activity_level %></h3>
-<h3>Sleep Level: <%= @tamagotchi.sleep_level %></h3>
-
-
-<form action="/feed" method="post">
-  <input type="hidden" name="id" value="<%= @tamagotchi.id %>">
-  <button action="submit" class="btn btn-lg btn-success">Feed</button>
-</form>
-<form action="/play" method="post">
-  <input type="hidden" name="id" value="<%= @tamagotchi.id %>">
-  <button action="submit" class="btn btn-lg btn-primary">Play</button>
-</form>
-<form action="/sleep" method="post">
-  <input type="hidden" name="id" value="<%= @tamagotchi.id %>">
-  <button action="submit" class="btn btn-lg btn-danger">Sleep</button>
-</form>
+    <h3>Food Level: <%= @tamagotchi.food_level %></h3>
 
 
-<a href='/'>Back</a>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: <%= @tamagotchi.food_level * 10 %>%;">
+    <%= @tamagotchi.food_level * 10 %>%
+      </div>
+    </div>
+
+    <h3>Activity Level: <%= @tamagotchi.activity_level %></h3>
+    <h3>Sleep Level: <%= @tamagotchi.sleep_level %></h3>
+
+    <a href='/'>Back</a>
+  </div>
+  <div class="col-sm-6">
+    <form action="/feed" method="post" class="form-inline">
+      <input type="hidden" name="id" value="<%= @tamagotchi.id %>">
+      <button action="submit" class="btn btn-lg btn-success"><span class="glyphicon glyphicon-apple" aria-hidden="true"></span> Feed</button>
+    </form>
+    <form action="/play" method="post" class="form-inline">
+      <input type="hidden" name="id" value="<%= @tamagotchi.id %>">
+      <button action="submit" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-sunglasses" aria-hidden="true"> Play</span></button>
+    </form>
+    <form action="/sleep" method="post" class="form-inline">
+      <input type="hidden" name="id" value="<%= @tamagotchi.id %>">
+      <button action="submit" class="btn btn-lg btn-warning"><span class="glyphicon glyphicon-lamp" aria-hidden="true"> Sleep</span></button>
+    </form>
+  </div>
+</div>

@@ -26,21 +26,25 @@ end
 
 post '/feed' do
   @tamagotchi = Tamagotchi.find(params['id'].to_i)
-  @tamagotchi.feed
+  @tamagotchi.sleep(1)
+  @tamagotchi.play(1)
+  @tamagotchi.feed(6)
   redirect back
 end
 
 post '/sleep' do
   @tamagotchi = Tamagotchi.find(params['id'].to_i)
-  new_level = @tamagotchi.sleep_level + 5
-  @tamagotchi.update(:sleep_level => new_level)
+  @tamagotchi.sleep(6)
+  @tamagotchi.play(1)
+  @tamagotchi.feed(1)
   redirect back
 end
 
 post '/play' do
   @tamagotchi = Tamagotchi.find(params['id'].to_i)
-  new_level = @tamagotchi.activity_level + 5
-  @tamagotchi.update(:activity_level => new_level)
+  @tamagotchi.sleep(1)
+  @tamagotchi.play(6)
+  @tamagotchi.feed(1)
   redirect back
 end
 
