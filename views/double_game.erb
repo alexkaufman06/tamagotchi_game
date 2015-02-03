@@ -1,0 +1,106 @@
+<meta http-equiv="refresh" content="1">
+<div class="row">
+<div class="col-sm-6">
+<div class="game-box">
+  <div class="text-center">
+    <h1><%= @tamagotchi1.name %></h1>
+    <img src="/tama1.gif" alt="alien" />
+  </div>
+<div class="row">
+  <div class="col-sm-6">
+    <h3>Food Level: <%= @tamagotchi1.food_level %></h3>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: <%= @tamagotchi1.food_level * 10 %>%;">
+        <%= @tamagotchi1.food_level * 10 %>%
+      </div>
+    </div>
+    <h3>Activity Level: <%= @tamagotchi1.activity_level %></h3>
+    <div class="progress">
+      <div class="progress-bar danger" role="progressbar" style="width: <%= @tamagotchi1.activity_level * 10 %>%;">
+        <%= @tamagotchi1.activity_level * 10 %>%
+      </div>
+    </div>
+    <h3>Sleep Level: <%= @tamagotchi1.sleep_level %></h3>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: <%= @tamagotchi1.sleep_level * 10 %>%;">
+        <%= @tamagotchi1.sleep_level * 10 %>%
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <br><br><br>
+    <form action="/feed" method="post" class="form-inline">
+      <input type="hidden" name="id" value="<%= @tamagotchi1.id %>">
+      <button action="submit" class="btn btn-md btn-success"><span class="glyphicon glyphicon-apple" aria-hidden="true"></span> Feed</button>
+    </form>
+    <br><br>
+    <form action="/play" method="post" class="form-inline">
+      <input type="hidden" name="id" value="<%= @tamagotchi1.id %>">
+      <button action="submit" class="btn btn-md btn-primary"><span class="glyphicon glyphicon-sunglasses" aria-hidden="true"> Play</span></button>
+    </form>
+    <br><br>
+    <form action="/sleep" method="post" class="form-inline">
+      <input type="hidden" name="id" value="<%= @tamagotchi1.id %>">
+      <button action="submit" class="btn btn-md btn-warning"><span class="glyphicon glyphicon-lamp" aria-hidden="true"> Sleep</span></button>
+    </form>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+<%# Tamagotchi 2 starts below here %>
+
+<div class="col-sm-6">
+<div class="game-box">
+  <div class="text-center">
+    <h1><%= @tamagotchi2.name %></h1>
+    <img src="/tama1.gif" alt="alien" />
+  </div>
+<div class="row">
+  <div class="col-sm-6">
+    <h3>Food Level: <%= @tamagotchi2.food_level %></h3>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: <%= @tamagotchi2.food_level * 10 %>%;">
+        <%= @tamagotchi2.food_level * 10 %>%
+      </div>
+    </div>
+    <h3>Activity Level: <%= @tamagotchi2.activity_level %></h3>
+    <div class="progress">
+      <div class="progress-bar danger" role="progressbar" style="width: <%= @tamagotchi2.activity_level * 10 %>%;">
+        <%= @tamagotchi2.activity_level * 10 %>%
+      </div>
+    </div>
+    <h3>Sleep Level: <%= @tamagotchi2.sleep_level %></h3>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: <%= @tamagotchi2.sleep_level * 10 %>%;">
+        <%= @tamagotchi2.sleep_level * 10 %>%
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <br><br><br>
+    <form action="/feed" method="post" class="form-inline">
+      <input type="hidden" name="id" value="<%= @tamagotchi2.id %>">
+      <button action="submit" class="btn btn-md btn-success"><span class="glyphicon glyphicon-apple" aria-hidden="true"></span> Feed</button>
+    </form>
+    <br><br>
+    <form action="/play" method="post" class="form-inline">
+      <input type="hidden" name="id" value="<%= @tamagotchi2.id %>">
+      <button action="submit" class="btn btn-md btn-primary"><span class="glyphicon glyphicon-sunglasses" aria-hidden="true"> Play</span></button>
+    </form>
+    <br><br>
+    <form action="/sleep" method="post" class="form-inline">
+      <input type="hidden" name="id" value="<%= @tamagotchi2.id %>">
+      <button action="submit" class="btn btn-md btn-warning"><span class="glyphicon glyphicon-lamp" aria-hidden="true"> Sleep</span></button>
+    </form>
+  </div>
+</div>
+</div>
+</div>
+</div>
+  <div class="text-center">
+    <br>
+    <a href='/' class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-arrow-left"> Back</span></a>
+  </div>

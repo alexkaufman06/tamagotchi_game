@@ -9,6 +9,21 @@
 <br>
 <div class="main-bottom">
 <% if @tamagotchis.any? %>
+<form action="/load_game" method="get">
+  <label for="tama[]">Your Tamagotchis <span class="badge"><%= @tamagotchis.length %></span></label>
+  <% @tamagotchis.each do |tamagotchi| %>
+    <br><br>
+    <input type="checkbox" name="tamagotchis[]" value="<%= tamagotchi.id %>"> <%= tamagotchi.name %>
+    <a href="/delete/<%= tamagotchi.id %>"><em><small>Delete Tamagotchi</small></em></a>
+<% end %>
+  <br><br>
+  <button action="submit" class="btn btn-lg btn-danger">Play</button>
+</form>
+
+
+
+
+<!--
 <ul>
   <% @tamagotchis.each do |tamagotchi| %>
     <li>
@@ -21,3 +36,4 @@
   <p>You have no tamagotchis!</p>
 <% end %>
 </div>
+-->
