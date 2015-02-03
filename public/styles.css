@@ -2,3 +2,7 @@ em {
   color: red;
   padding-left: 15px;
 }
+
+.page-header {
+  text-align: center;
+}
