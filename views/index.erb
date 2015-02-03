@@ -1,5 +1,5 @@
 <div class="main-header">
-    <h1>Tamagotchi! <br><img src="tamogatchi.gif"></h1>
+  <h1>Tamagotchi! <br><img src="tamogatchi.gif"></h1>
 </div>
 <form action="/" method="post" class="form-group">
   <input type="text" name="name" placeholder="name your tamagotchi" class="form-control" required autofocus>
@@ -8,32 +8,18 @@
 </form>
 <br>
 <div class="main-bottom">
-<% if @tamagotchis.any? %>
-<form action="/load_game" method="get">
-  <label for="tama[]">Your Tamagotchis <span class="badge"><%= @tamagotchis.length %></span></label>
-  <% @tamagotchis.each do |tamagotchi| %>
-    <br><br>
-    <input type="checkbox" name="tamagotchis[]" value="<%= tamagotchi.id %>"> <%= tamagotchi.name %>
-    <a href="/delete/<%= tamagotchi.id %>"><em><small>Delete Tamagotchi</small></em></a>
-<% end %>
-  <br><br>
-  <button action="submit" class="btn btn-lg btn-danger">Play</button>
-</form>
-
-
-
-
-<!--
-<ul>
-  <% @tamagotchis.each do |tamagotchi| %>
-    <li>
-      <a href="/game/<%= tamagotchi.id %>"><%= tamagotchi.name %></a>
+  <% if @tamagotchis.any? %>
+  <form action="/load_game" method="get">
+    <label for="tama[]">Your Tamagotchis <span class="badge"><%= @tamagotchis.length %></span></label>
+    <% @tamagotchis.each do |tamagotchi| %>
+      <br><br>
+      <input type="checkbox" name="tamagotchis[]" value="<%= tamagotchi.id %>"> <%= tamagotchi.name %>
       <a href="/delete/<%= tamagotchi.id %>"><em><small>Delete Tamagotchi</small></em></a>
-    </li>
+    <% end %>
+    <br><br>
+    <button action="submit" class="btn btn-lg btn-danger">Play</button>
+    </form>
+  <% else %>
+    <p>You have no tamagotchis!</p>
   <% end %>
-</ul>
-<% else %>
-  <p>You have no tamagotchis!</p>
-<% end %>
 </div>
--->
