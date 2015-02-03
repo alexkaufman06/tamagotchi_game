@@ -11,9 +11,8 @@
       <a href="/game/<%= tamagotchi.id %>"><%= tamagotchi.name %></a>
       <a href="/delete/<%= tamagotchi.id %>"><em><small>Delete Tamagotchi</small></em></a>
     </li>
-    Food Level = <%= tamagotchi.food_level %>
   <% end %>
 </ul>
 <% else %>
-  <p>You have no tamagotchis!</p> 
+  <p>You have no tamagotchis!</p>
 <% end %>

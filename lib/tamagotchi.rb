@@ -44,8 +44,8 @@ class Tamagotchi < ActiveRecord::Base
 
 private
   def set_initial_levels
-    self.food_level = 10
-    self.activity_level = 10
-    self.sleep_level = 10
+    self.food_level = 11
+    self.activity_level = 11
+    self.sleep_level = 11
   end
 end

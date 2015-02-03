@@ -1,5 +1,5 @@
 <h1><%= @tamagotchi.name %></h1>
-<meta http-equiv="refresh" content="5">
+<meta http-equiv="refresh" content=".5">
 <div class="row">
   <div class="col-sm-6">
 
@@ -10,12 +10,25 @@
 
     <div class="progress">
       <div class="progress-bar" role="progressbar" style="width: <%= @tamagotchi.food_level * 10 %>%;">
-    <%= @tamagotchi.food_level * 10 %>%
+    <%= @tamagotchi.food_level %>/10
       </div>
     </div>
 
     <h3>Activity Level: <%= @tamagotchi.activity_level %></h3>
+
+    <div class="progress">
+      <div class="progress-bar danger" role="progressbar" style="width: <%= @tamagotchi.activity_level * 10 %>%;">
+    <%= @tamagotchi.activity_level %>/10
+      </div>
+    </div>
+
     <h3>Sleep Level: <%= @tamagotchi.sleep_level %></h3>
+
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: <%= @tamagotchi.sleep_level * 10 %>%;">
+    <%= @tamagotchi.sleep_level %>/10
+      </div>
+    </div>
 
     <a href='/'>Back</a>
   </div>
