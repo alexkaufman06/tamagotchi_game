@@ -32,7 +32,7 @@ $ rake db:test:prepare
 ```
 ### Bug Reports
 Some browsers allow for creation of a tamagotchi with no name.  Also, some browsers
-flash violently and may cause epileptic seizures.
+flash violently and may cause epileptic seizures. 
 ### Author
 Alex Kaufman & Gabe Finch
 #### MIT License
