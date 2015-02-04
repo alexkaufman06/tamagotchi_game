@@ -57,12 +57,18 @@ end
 
 get '/load_game' do
   tamagotchis = params['tamagotchis']
-  if tamagotchis.length == 1
+  if tamagotchis == nil
+    @error = true
+    @tamagotchis = Tamagotchi.all
+    erb :index
+  elsif tamagotchis.length == 1
     redirect ('/single_game/' + tamagotchis[0])
   elsif tamagotchis.length == 2
     redirect ('/double_game/' + tamagotchis[0] + "/" + tamagotchis[1])
-  else
-
+  elsif tamagotchis.length > 2
+    @error = true
+    @tamagotchis = Tamagotchi.all
+    erb :index
   end
 end
 
