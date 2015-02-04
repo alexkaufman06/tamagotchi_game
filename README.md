@@ -31,7 +31,8 @@ $ rake db:migrate
 $ rake db:test:prepare
 ```
 ### Bug Reports
-The user must select one or two tamagotchis to play.
+Some browsers allow for creation of a tamagotchi with no name.  Also, some browsers
+flash violently and may cause epileptic seizures.
 ### Author
 Alex Kaufman & Gabe Finch
 #### MIT License

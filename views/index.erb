@@ -18,6 +18,9 @@
     <% end %>
     <br><br>
     <button action="submit" class="btn btn-lg btn-danger">Play</button>
+    <% if @error %>
+      <h3>Pick 1-2 tamagotchis please sir!</h3>
+    <% end %>
     </form>
   <% else %>
     <p>You have no tamagotchis!</p>
